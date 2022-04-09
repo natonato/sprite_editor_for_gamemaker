@@ -2,7 +2,7 @@
     "name": "test-page",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://natonato.github.io/test-page",
+    "homepage": "https://natonato.github.io/test-page-rename",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.4",
