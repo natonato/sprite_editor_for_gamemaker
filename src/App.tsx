@@ -11,7 +11,7 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to reload. <br />
                     Hello! Deploy test
                     <br />
-                    And Private GH-Pages Test!
+                    CI/CD Test by Github Action
                 </p>
                 <a
                     className="App-link"
