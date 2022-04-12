@@ -10,6 +10,8 @@ function App() {
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload. <br />
                     Hello! Deploy test
+                    <br />
+                    And Private Test Too!
                 </p>
                 <a
                     className="App-link"
