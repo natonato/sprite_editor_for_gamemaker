@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
-import Help from './components/HelpBtn';
+import BottomBtn from './components/BottomBtn';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 
@@ -13,7 +14,8 @@ function App() {
                 <Route path="/" element={<Page1 />} />
                 <Route path="/test" element={<Page2 />} />
             </Routes>
-            <Help />
+            <BottomBtn />
+            <Footer />
         </div>
     );
 }
