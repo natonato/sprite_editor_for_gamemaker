@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { MouseEvent, ReactChild, useRef } from 'react';
-import '../scss/modal.scss';
+import 'scss/modal.scss';
 
 type TProps = {
     title: string;

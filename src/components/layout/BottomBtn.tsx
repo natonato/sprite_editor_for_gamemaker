@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../scss/button.scss';
-import Modal from './Modal';
-import ModalTest from './ModalTest';
+import 'scss/button.scss';
+import Modal from 'components/layout/Modal';
+import ModalTest from 'components/mock/ModalTestMock';
 
 const Help = () => {
     const [showModal, setShowModal] = useState(false);
