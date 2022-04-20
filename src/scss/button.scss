@@ -1,7 +1,6 @@
-.btn_gotop {
+.btn_bottom button {
     position: fixed;
-    bottom: 5vh;
-    right: 5vw;
+    right: 3vw;
     z-index: 999;
     width: 3rem;
     height: 3rem;
@@ -9,4 +8,11 @@
     border: 0;
     cursor: help;
     border-radius: 100%;
+}
+.btn_help {
+    bottom: 3vh;
+    cursor: help;
+}
+.btn_top {
+    bottom: 9vh;
 }
