@@ -6,7 +6,6 @@ import ModalTest from './ModalTest';
 const Help = () => {
     const [showModal, setShowModal] = useState(false);
     const handleClickHelpBtn = () => {
-        console.log('clickHelp!');
         setShowModal(true);
     };
     const handleClickTopBtn = () => {
