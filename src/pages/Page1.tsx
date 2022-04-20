@@ -1,8 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../scss/page1.scss';
 
 const Page1 = () => {
-    return <div className="page1">page1!</div>;
+    return (
+        <div className="page1">
+            page1!
+            <br />
+            <Link to="/test">
+                <button>To Page 2</button>
+            </Link>
+        </div>
+    );
 };
 
 export default Page1;
