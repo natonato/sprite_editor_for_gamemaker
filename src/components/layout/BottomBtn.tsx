@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../scss/button.scss';
-import Modal from './Modal';
-import ModalTest from './ModalTest';
+import 'scss/button.scss';
+import Modal from 'components/layout/Modal';
+import ModalTest from 'components/mock/ModalTestMock';
 
 const Help = () => {
     const [showModal, setShowModal] = useState(false);
@@ -25,7 +25,7 @@ const Help = () => {
                 children={<ModalTest />}
             />
             <div className="btn_bottom">
-                <button className=" btn_top" onClick={handleClickTopBtn}>
+                <button className=" btn_gotoTop" onClick={handleClickTopBtn}>
                     <span>top</span>
                 </button>
                 <button className=" btn_help" onClick={handleClickHelpBtn}>

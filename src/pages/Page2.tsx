@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../scss/page2.scss';
-import '../scss/common.scss';
-import LeftSidebar from '../components/LeftSidebar';
-import RightSidebar from '../components/RightSidebar';
+import 'scss/page2.scss';
+import 'scss/common.scss';
+import LeftSidebar from 'components/side/LeftSidebar';
+import RightSidebar from 'components/side/RightSidebar';
 
 const Page2 = () => {
     return (
