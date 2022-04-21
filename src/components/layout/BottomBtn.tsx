@@ -25,7 +25,7 @@ const Help = () => {
                 children={<ModalTest />}
             />
             <div className="btn_bottom">
-                <button className=" btn_top" onClick={handleClickTopBtn}>
+                <button className=" btn_gotoTop" onClick={handleClickTopBtn}>
                     <span>top</span>
                 </button>
                 <button className=" btn_help" onClick={handleClickHelpBtn}>
