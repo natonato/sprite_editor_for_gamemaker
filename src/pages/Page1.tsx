@@ -10,6 +10,7 @@ const Page1 = () => {
             <Link to="/test">
                 <button>To Page 2</button>
             </Link>
+            <br />
             <Link to="/horizontal_scroll">
                 <button>To Page 3</button>
             </Link>
