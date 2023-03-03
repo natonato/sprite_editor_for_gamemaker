@@ -33,6 +33,7 @@ const HorizontalScrollMock = ({ idx, itemId }: { idx: string; itemId: string }) 
 };
 
 const Page3 = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [mockDataList, setMockDataList] = useState(['1', '2', '3', '4', '5']);
     return (
         <div className="page3">
