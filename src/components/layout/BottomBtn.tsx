@@ -13,6 +13,7 @@ const Help = () => {
     };
 
     const closeModal = () => {
+        console.log('closeModal');
         setShowModal(false);
     };
 

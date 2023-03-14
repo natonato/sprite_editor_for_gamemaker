@@ -28,6 +28,13 @@ const Modal = ({ title, show, close, children }: TProps) => {
                         <div className="title">
                             <h2>{title}</h2>
                         </div>
+                        <button className="close" onClick={close}>
+                            &times;
+                        </button>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                        <a href="#" className="close" onClick={close}>
+                            &times;
+                        </a>
                         <div className="close" onClick={close}>
                             &times;
                         </div>
