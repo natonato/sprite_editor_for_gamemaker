@@ -2,7 +2,7 @@
     "name": "test-page",
     "version": "0.1.0",
     "private": true,
-    "homepage": "/react-frame",
+    "homepage": "/tile_sprite_editor_for_gamemaker",
     "dependencies": {
         "@types/node": "^20.11.5",
         "@types/react": "^18.2.48",
