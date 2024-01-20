@@ -126,13 +126,21 @@ const MainPage = () => {
             type="number"
             value={tileSize.width.toString()}
             onChange={(e) => {
+              const val = Number(e.target.value);
+              if (val > 100 || val < 0) {
+                window.alert("Enter a value between 0 and 100.");
+                return;
+              }
+
               localStorage.setItem("width", e.target.value);
 
               setTileSize((prev) => ({
                 ...prev,
-                width: Number(e.target.value),
+                width: val,
               }));
             }}
+            max={100}
+            min={0}
           />
         </>
       )}
@@ -142,12 +150,20 @@ const MainPage = () => {
         type="number"
         value={tileSize.height.toString()}
         onChange={(e) => {
+          const val = Number(e.target.value);
+          if (val > 100 || val < 0) {
+            window.alert("Enter a value between 0 and 100.");
+            return;
+          }
+
           localStorage.setItem("height", e.target.value);
           setTileSize((prev) => ({
             ...prev,
-            height: Number(e.target.value),
+            height: val,
           }));
         }}
+        max={100}
+        min={0}
       />
       <br />
       {file?.imageUrl && (
