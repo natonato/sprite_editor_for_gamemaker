@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@main
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
@@ -26,5 +26,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAGES }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
