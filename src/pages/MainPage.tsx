@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import "scss/mainPage.scss";
 
 const MainPage = () => {
   const [file, setFile] = useState<{
