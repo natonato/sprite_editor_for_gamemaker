@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-frame/static/css/main.7440eaed.css",
-    "main.js": "/react-frame/static/js/main.44504784.js",
-    "index.html": "/react-frame/index.html",
-    "main.7440eaed.css.map": "/react-frame/static/css/main.7440eaed.css.map",
-    "main.44504784.js.map": "/react-frame/static/js/main.44504784.js.map"
+    "main.css": "/tile_sprite_editor_for_gamemaker/static/css/main.7440eaed.css",
+    "main.js": "/tile_sprite_editor_for_gamemaker/static/js/main.a9967698.js",
+    "index.html": "/tile_sprite_editor_for_gamemaker/index.html",
+    "main.7440eaed.css.map": "/tile_sprite_editor_for_gamemaker/static/css/main.7440eaed.css.map",
+    "main.a9967698.js.map": "/tile_sprite_editor_for_gamemaker/static/js/main.a9967698.js.map"
   },
   "entrypoints": [
     "static/css/main.7440eaed.css",
-    "static/js/main.44504784.js"
+    "static/js/main.a9967698.js"
   ]
 }
