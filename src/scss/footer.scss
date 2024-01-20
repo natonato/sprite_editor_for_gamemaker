@@ -2,3 +2,14 @@
   background-color: lightslategray;
   min-height: 10vh;
 }
+
+.githubBtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: Black;
+  font-size: 20px;
+}
