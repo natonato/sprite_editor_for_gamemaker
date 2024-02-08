@@ -11,13 +11,17 @@ const MainPage = () => {
   const imageRef = useRef<HTMLImageElement>(null);
 
   const [tileSize, setTileSize] = useState({ width: 16, height: 16 });
+  const [fileFix, setFileFix] = useState({ preFix: "spr_", sufFix: "" });
   const [isMoveRight, setIsMoveRight] = useState(true);
 
   useEffect(() => {
     const width = Number(localStorage.getItem("width")) || 16;
     const height = Number(localStorage.getItem("height")) || 16;
-
     setTileSize({ width, height });
+
+    const preFix = localStorage.getItem("preFix") || "spr_";
+    const sufFix = localStorage.getItem("sufFix") || "";
+    setFileFix({ preFix, sufFix });
   }, []);
 
   useEffect(() => {
@@ -118,9 +122,9 @@ const MainPage = () => {
           reader.readAsDataURL(file);
         }}
       />
+      <br />
       {isMoveRight && (
         <>
-          <br />
           <label> Tile Width : </label>
           <input
             type="number"
@@ -142,9 +146,9 @@ const MainPage = () => {
             max={100}
             min={0}
           />
+          <span>{" / "}</span>
         </>
       )}
-      <br />
       <label> Tile Height : </label>
       <input
         type="number"
@@ -166,23 +170,64 @@ const MainPage = () => {
         min={0}
       />
       <br />
+      <label> File Prefix : </label>
+      <input
+        value={fileFix.preFix}
+        onChange={(e) => {
+          localStorage.setItem("preFix", e.target.value);
+          setFileFix((prev) => ({ ...prev, preFix: e.target.value }));
+        }}
+      />
+      <span>{" / "}</span>
+      <label> File Suffix : </label>
+      <input
+        value={fileFix.sufFix}
+        onChange={(e) => {
+          localStorage.setItem("sufFix", e.target.value);
+          setFileFix((prev) => ({ ...prev, sufFix: e.target.value }));
+        }}
+      />
+      <br />
       {file?.imageUrl && (
         <>
-          <img
-            id="dataimage"
-            alt="ImageName"
-            src={file?.imageUrl}
-            ref={imageRef}
-            style={{ paddingRight: "2vw" }}
-          />
-          <canvas
-            ref={canvasRef}
-            id="image"
-            width={file.img.width + (isMoveRight ? tileSize.width : 0)}
-            height={file.img.height + (!isMoveRight ? tileSize.height : 0)}
-          />
+          <div className="imageDiffDiv">
+            <div>
+              <div>
+                <b>Original</b>
+              </div>
+              <img
+                id="dataimage"
+                className="originImage image"
+                alt="ImageName"
+                src={file?.imageUrl}
+                ref={imageRef}
+                style={{
+                  width: file?.img.width,
+                  height: file?.img.height,
+                }}
+              />
+            </div>
+            <div
+              style={{
+                paddingRight: "2vw",
+              }}
+            />
+            <div>
+              <div>
+                <b>Modified</b>
+              </div>
+              <canvas
+                ref={canvasRef}
+                id="image"
+                className="image"
+                width={file.img.width + (isMoveRight ? tileSize.width : 0)}
+                height={file.img.height + (!isMoveRight ? tileSize.height : 0)}
+              />
+            </div>
+          </div>
           <br />
           <button
+            className="downloadBtn"
             onClick={() => {
               if (!canvasRef.current) {
                 return;
@@ -190,7 +235,9 @@ const MainPage = () => {
               // 캔버스 다운로드
               const $link = document.createElement("a");
 
-              $link.download = file.name;
+              const [fileName] = file.name.split(".");
+
+              $link.download = `${fileFix.preFix}${fileName}${fileFix.sufFix}`;
               $link.href = canvasRef.current.toDataURL("image/png");
 
               $link.click();

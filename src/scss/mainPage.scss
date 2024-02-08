@@ -2,3 +2,39 @@
   text-align: center;
   min-height: 80vh;
 }
+
+.imageDiffDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.image {
+  border: 3px solid grey;
+  padding: 3px;
+  object-fit: none;
+  object-position: top;
+}
+.originImage {
+  object-fit: none;
+  object-position: top;
+}
+
+.downloadBtn {
+  background-color: lightblue;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  min-height: 30px;
+  min-width: 120px;
+  margin-bottom: 3vh;
+
+  &:hover,
+  &:focus {
+    outline-color: transparent;
+    outline-style: solid;
+    box-shadow: 0 0 0 3px rgb(120, 187, 246);
+  }
+}
