@@ -12,8 +12,8 @@ const Footer = () => {
       >
         <img
           src={require(`image/github-mark.png`)}
-          width="40px"
-          height="40px"
+          width="30px"
+          height="30px"
           alt=""
         />
         Create By natonato

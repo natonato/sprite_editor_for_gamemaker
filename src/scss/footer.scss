@@ -1,6 +1,9 @@
 .footer {
   background-color: lightslategray;
   min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .githubBtn {
@@ -10,5 +13,5 @@
   align-items: center;
   text-decoration: none;
   color: Black;
-  font-size: 20px;
+  font-size: 17px;
 }
