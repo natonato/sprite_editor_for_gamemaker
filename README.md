@@ -1,3 +1,5 @@
+https://natonato.github.io/sprite_editor_for_gamemaker/
+
 Game maker always creates the first item as a blank tile when creating a tile set.
 게임메이커는 타일셋 생성 시 첫 번째 항목을 항상 빈 타일로 생성합니다.
 
