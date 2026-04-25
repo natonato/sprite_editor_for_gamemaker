@@ -16,8 +16,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.70.0",
     "sass-loader": "^14.0.0",
-    "typescript": "^5.3.3",
-    "web-vitals": "^3.5.1"
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "typescript": "^5.3.3"
   }
 }
