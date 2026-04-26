@@ -218,7 +218,18 @@ const CollisionMapPage = () => {
     const key = `${x},${y}`;
 
     if (!isMove) saveHistory();
-    if (e.button === 2) { setCollisionTiles(prev => { const next = { ...prev }; delete next[key]; return next; }); return; }
+
+    // Check if right click (button 2 or buttons mask 2)
+    const isRightClick = e.button === 2 || (e.buttons === 2);
+
+    if (isRightClick) {
+      setCollisionTiles(prev => {
+        const next = { ...prev };
+        delete next[key];
+        return next;
+      });
+      return;
+    }
     if (selectedTool === "FILL") { if (!isMove) performFill(x, y); return; }
     if (selectedTool === "ERASER") { setCollisionTiles(prev => { const next = { ...prev }; delete next[key]; return next; }); }
     else { setCollisionTiles(prev => ({ ...prev, [key]: selectedShape })); }
