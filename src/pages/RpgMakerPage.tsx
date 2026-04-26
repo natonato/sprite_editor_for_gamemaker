@@ -26,10 +26,46 @@ const RpgMakerPage = () => {
   const [isSelecting, setIsSelecting] = useState(false);
   const [selectStart, setSelectStart] = useState<{ x: number; y: number } | null>(null);
 
+  const [history, setHistory] = useState<string[]>([]);
+
   const sourceCanvasRef = useRef<HTMLCanvasElement>(null);
   const sourceGridCanvasRef = useRef<HTMLCanvasElement>(null);
   const mergedCanvasRef = useRef<HTMLCanvasElement>(null);
   const mergedGridCanvasRef = useRef<HTMLCanvasElement>(null);
+
+  const saveHistory = useCallback(() => {
+    const canvas = mergedCanvasRef.current;
+    if (!canvas) return;
+    const dataUrl = canvas.toDataURL();
+    setHistory((prev) => [dataUrl, ...prev].slice(0, 50));
+  }, []);
+
+  const undo = useCallback(() => {
+    if (history.length === 0) return;
+    const [prevDataUrl, ...rest] = history;
+    const img = new Image();
+    img.src = prevDataUrl;
+    img.onload = () => {
+      const canvas = mergedCanvasRef.current;
+      const ctx = canvas?.getContext("2d");
+      if (ctx && canvas) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        setHistory(rest);
+      }
+    };
+  }, [history]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "z") {
+        e.preventDefault();
+        undo();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [undo]);
 
   const processFiles = useCallback((files: File[]) => {
     files.forEach((file) => {
@@ -216,6 +252,7 @@ const RpgMakerPage = () => {
 
   const handleMergedMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
     e.preventDefault();
+    saveHistory();
     const isRightClick = e.button === 2;
 
     const rect = mergedGridCanvasRef.current?.getBoundingClientRect();
@@ -353,9 +390,11 @@ const RpgMakerPage = () => {
                 style={{ width: "50px" }}
             />
             <button onClick={() => {
+                saveHistory();
                 const ctx = mergedCanvasRef.current?.getContext("2d");
                 ctx?.clearRect(0, 0, mergedSize.w * tileSize, mergedSize.h * tileSize);
             }}>Clear All</button>
+            <button onClick={undo} disabled={history.length === 0}>Undo (Ctrl+Z)</button>
           </div>
 
           <div className="canvas-container">

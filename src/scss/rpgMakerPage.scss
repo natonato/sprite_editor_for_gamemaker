@@ -89,6 +89,8 @@
       canvas {
         display: block;
         cursor: crosshair;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
       }
     }
   }
@@ -121,6 +123,8 @@
       canvas {
         display: block;
         cursor: pointer;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
       }
     }
   }
