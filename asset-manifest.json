@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sprite_editor_for_gamemaker/static/css/main.a6d8b0ae.css",
-    "main.js": "/sprite_editor_for_gamemaker/static/js/main.364c574c.js",
+    "main.css": "/sprite_editor_for_gamemaker/static/css/main.34bfff6d.css",
+    "main.js": "/sprite_editor_for_gamemaker/static/js/main.b08f57b2.js",
     "index.html": "/sprite_editor_for_gamemaker/index.html",
-    "main.a6d8b0ae.css.map": "/sprite_editor_for_gamemaker/static/css/main.a6d8b0ae.css.map",
-    "main.364c574c.js.map": "/sprite_editor_for_gamemaker/static/js/main.364c574c.js.map"
+    "main.34bfff6d.css.map": "/sprite_editor_for_gamemaker/static/css/main.34bfff6d.css.map",
+    "main.b08f57b2.js.map": "/sprite_editor_for_gamemaker/static/js/main.b08f57b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6d8b0ae.css",
-    "static/js/main.364c574c.js"
+    "static/css/main.34bfff6d.css",
+    "static/js/main.b08f57b2.js"
   ]
 }
