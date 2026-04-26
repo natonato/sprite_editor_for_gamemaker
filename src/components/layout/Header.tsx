@@ -22,6 +22,12 @@ const Header = () => {
         >
           Tileset Editor for RPG Maker MZ
         </Link>
+        <Link
+          to="/collision-map"
+          className={classNames("nav-item", { active: location.pathname === "/collision-map" })}
+        >
+          QM Collision Map Editor
+        </Link>
       </div>
     </div>
   );

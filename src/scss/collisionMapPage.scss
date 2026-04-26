@@ -1,0 +1,135 @@
+.collisionMapPage {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+
+  &.dragging {
+    background-color: rgba(75, 82, 99, 0.1);
+  }
+
+  .drop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(75, 82, 99, 0.8);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .shape-selector {
+      display: flex;
+      gap: 5px;
+
+      .shape-btn {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+
+        &.active {
+          border: 2px solid #4b5263;
+          background: #e0e0e0;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .editor-container {
+    display: flex;
+    gap: 20px;
+    height: calc(100vh - 250px);
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+
+  .canvas-viewport {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee),
+      linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+
+    .canvas-stack {
+      position: relative;
+      margin: 0 auto;
+      
+      canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .bg-canvas {
+        z-index: 1;
+        opacity: 0.5; // Default opacity for background
+      }
+
+      .collision-canvas {
+        z-index: 2;
+      }
+
+      .grid-canvas {
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      .interaction-canvas {
+        z-index: 4;
+        cursor: crosshair;
+      }
+    }
+  }
+
+  .downloadBtn {
+    padding: 10px 20px;
+    background: #4b5263;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background: #3a404d;
+    }
+  }
+}
